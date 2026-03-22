@@ -40,7 +40,7 @@ Dieses Projekt folgt dem TSV-Standard-Workflow:
 
 **Plan → Todo → Verify → Doku → Commit**
 
-Details: [tsv-docs/prozesse/claude-code-workflow.md](https://github.com/ckoehler99/tsv-docs/blob/main/prozesse/claude-code-workflow.md)
+Details: [tsv-docs/prozesse/claude-code-workflow.md](https://github.com/tsv-wartenberg/tsv-docs/blob/main/prozesse/claude-code-workflow.md)
 
 ## Architektur-Kontext
 
@@ -50,4 +50,4 @@ Dieses Projekt ist Teil der TSV-Multi-App-Architektur:
 - **tsv-auth**: Zentrale Benutzerverwaltung — geplant
 - **tsv-docs**: Zentrale Dokumentation
 
-Zentrale Doku: [github.com/ckoehler99/tsv-docs](https://github.com/ckoehler99/tsv-docs)
+Zentrale Doku: [github.com/tsv-wartenberg/tsv-docs](https://github.com/tsv-wartenberg/tsv-docs)
