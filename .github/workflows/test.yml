@@ -23,12 +23,8 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
 
-      - name: Deploy v1 + v2 via rsync
+      - name: Deploy v2 (tsvwartenberg_modern) via rsync
         run: |
-          rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
-            ./repo/v1/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:typo313-test/packages/tsvwartenberg/
-
           rsync -avz --delete \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
             ./repo/v2/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:typo313-test/packages/tsvwartenberg_modern/

@@ -2,7 +2,7 @@
 
 ## Projektuebersicht
 
-TYPO3-Sitepackages fuer die offizielle Vereinswebsite [tsv-wartenberg.de](https://www.tsv-wartenberg.de/). Enthaelt zwei Design-Varianten (v1 Original, v2 Modern) basierend auf TYPO3 v13 mit Bootstrap Package v15.
+TYPO3-Sitepackage fuer die offizielle Vereinswebsite [tsv-wartenberg.de](https://www.tsv-wartenberg.de/). Basiert auf TYPO3 v13 mit Bootstrap Package v15 (Bootstrap 5). Produktiv/live ist das Sitepackage `tsvwartenberg_modern` unter `v2/`.
 
 **Domain:** tsv-wartenberg.de
 **Betreiber:** TSV Wartenberg e.V., 85456 Wartenberg, Bayern
@@ -20,19 +20,30 @@ TYPO3-Sitepackages fuer die offizielle Vereinswebsite [tsv-wartenberg.de](https:
 
 ```
 tsv-website/
-├── v1/   tsvwartenberg           (aktuelles/originales Design)
+├── v2/   tsvwartenberg_modern    (produktives Sitepackage – live)
 │   ├── Classes/
 │   ├── Configuration/
+│   │   └── Sets/SitePackage/     (Site-Set: config.yaml, settings.yaml, setup.typoscript)
 │   ├── Resources/
+│   │   ├── Private/              (Layouts, Partials, Templates, Language)
+│   │   └── Public/Scss/Theme/    (Vereinsfarben, _navbar/_footer/_frame)
 │   ├── composer.json
 │   └── ext_emconf.php
-├── v2/   tsvwartenberg_modern    (modernisiertes Design)
+├── .github/workflows/           (ProdCI/TestCI: rsync-Deploy)
+├── CLAUDE.md
 └── README.md
 ```
 
-## Umschalten zwischen Designs
+Das Sitepackage `tsvwartenberg_modern` hängt nur von `bootstrap-package/full`
+ab. Templates/Navigation/Footer stammen aus dem Bootstrap Package; dieses
+Repo liefert das SCSS-Theme und die Site-Konfiguration.
 
-Siehe `tsv-docs/legacy/ANLEITUNG-v2-UMSCHALTUNG.md` fuer die Anleitung zum Wechsel zwischen v1 und v2 auf dem Server.
+## Historie: früheres v1-Sitepackage
+
+Früher lag parallel ein älteres Sitepackage `v1/` (`tsvwartenberg`,
+Bootstrap-3-Design) im Repo. Es wurde entfernt, nachdem die Live-Seite
+dauerhaft auf `tsvwartenberg_modern` umgestellt wurde. Der alte Stand
+bleibt in der Git-Historie erhalten (`git log -- v1/`).
 
 ## Entwicklungsprozess
 
